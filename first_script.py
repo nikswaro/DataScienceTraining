@@ -1,1 +1,1 @@
-print('Congratulations on running this script!! - Nikhil')
+print('Congratulations on running this script!!')
