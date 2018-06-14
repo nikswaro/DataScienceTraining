@@ -23,6 +23,7 @@ if __name__ == '__main__':
     main()
 """
 import numpy as np
+import pandas as pd
 x = np.array([1, 2, 3, 4, 5])
 Y = np.array([[1,2,3],[4,5,6],[7,8,9], [10,11,12]])
 print('x = ', x)
@@ -31,3 +32,9 @@ print(x_shape[0])
 print('y = ', Y)
 y_shape = Y.shape
 print(y_shape[0])
+
+# Using the Built-in functions you learned about in the
+# previous lesson, create a 4 x 4 ndarray that only
+# contains consecutive even numbers from 2 to 32 (inclusive)
+z = np.arange(2,33,2).reshape(4,4)
+print(z)
