@@ -201,6 +201,12 @@ def user_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def displayData(df, count):
+    start_index = (count - 1)*5
+    end_index = start_index + 4
+    print('\nPlease see below the raw data from {} index to {} index of the data filtered:'.format(start_index,end_index))    
+    print(df.loc[start_index:end_index])
+
 def main():
     while True:
         city, month, day = get_filters()
@@ -211,7 +217,15 @@ def main():
         trip_duration_stats(df)
         user_stats(df)
 
-        restart = input('\nWould you like to restart? Enter yes or no.\n')
+        count = 0
+        while True:
+            raw_data = input('\nWould you like to see next 5 rows of the raw data for the filters selected? Enter yes or no.\n')
+            count += 1            
+            if raw_data.lower() == 'yes':
+                displayData(df,count)
+            else:
+                break
+        restart = input('\nWould you like to restart by selecting new filters? Enter yes or no.\n')
         if restart.lower() != 'yes':
             break
 
