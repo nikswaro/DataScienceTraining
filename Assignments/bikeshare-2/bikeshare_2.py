@@ -205,7 +205,7 @@ def displayData(df, count):
     start_index = (count - 1)*5
     end_index = start_index + 4
     print('\nPlease see below the raw data from {} index to {} index of the data filtered:'.format(start_index,end_index))    
-    print(df.loc[start_index:end_index])
+    print(df.iloc[start_index:end_index])
 
 def main():
     while True:
